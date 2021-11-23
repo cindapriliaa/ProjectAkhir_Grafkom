@@ -223,7 +223,83 @@ def Kelinci3():
     glVertex2f(171, 416) #R_6
     glEnd()
 
+def Kelinci4():
+    glBegin(GL_POLYGON)
+    glColor3ub(160, 89, 201)
 
+    #Wajah4
+    glVertex2f(358, 400) #S_6
+    glVertex2f(371, 413) #T_6
+    glVertex2f(384, 420) #U_6
+    glVertex2f(398, 426) #V_6
+    glVertex2f(415, 428) #W_6
+    glVertex2f(435, 428) #Z_6
+    glVertex2f(451, 424) #A_7
+    glVertex2f(467, 418) #B_7
+    glVertex2f(475, 414) #C_7
+    glVertex2f(483, 407) #D_7
+    glVertex2f(490, 399) #E_7
+    glVertex2f(496, 391) #F_7
+    glVertex2f(498, 381) #G_7
+    glVertex2f(499, 373) #H_7
+    glVertex2f(498, 364) #I_7
+    glVertex2f(495, 355) #J_7
+    glVertex2f(488, 345) #K_7
+    glVertex2f(476, 335) #L_7
+    glVertex2f(462, 327) #M_7
+    glVertex2f(449, 323) #N_7
+    glVertex2f(434, 320) #O_7
+    glVertex2f(419, 320) #P_7
+    glVertex2f(400, 322) #Q_7
+    glVertex2f(384, 328) #R_7
+    glVertex2f(368, 338) #S_7
+    glVertex2f(358, 349) #T_7
+    glVertex2f(352, 359) #U_7
+    glVertex2f(350, 370) #V_7
+    glVertex2f(350, 380) #W_7
+    glVertex2f(353, 392) #Z_7
+    glEnd()
+
+    #Telinga Kiri4
+    glBegin(GL_POLYGON)
+    glColor3ub(160, 89, 201)
+    glVertex2f(378, 417) #A_8
+    glVertex2f(363, 450) #B_8
+    glVertex2f(361, 460) #C_8
+    glVertex2f(361, 468) #D_8
+    glVertex2f(364, 476) #E_8
+    glVertex2f(369, 484) #F_8
+    glVertex2f(376, 488) #G_8
+    glVertex2f(385, 491) #H_8
+    glVertex2f(394, 491) #I_8
+    glVertex2f(402, 487) #J_8
+    glVertex2f(409, 481) #K_8
+    glVertex2f(413, 474) #L_8
+    glVertex2f(416, 465) #M_8
+    glVertex2f(417, 445) #N_8
+    glVertex2f(418, 428) #O_8
+    glEnd()
+
+    #Telinga Kanan4
+    glBegin(GL_POLYGON)
+    glColor3ub(160, 89, 201)
+    glVertex2f(432, 428) #P_8
+    glVertex2f(433, 461) #Q_8
+    glVertex2f(437, 475) #R_8
+    glVertex2f(442, 484) #S_8
+    glVertex2f(452, 489) #T_8
+    glVertex2f(463, 491) #U_8
+    glVertex2f(473, 488) #V_8
+    glVertex2f(481, 483) #W_8
+    glVertex2f(486, 476) #Z_8
+    glVertex2f(488, 468) #A_9
+    glVertex2f(488, 460) #B_9
+    glVertex2f(485, 449) #C_9
+    glVertex2f(477, 428) #D_9
+    glVertex2f(471, 416) #E_9
+    glEnd()
+    
+    
 #Fungsi Iterasi untuk looping keseluruhan program agar workspace tidak hilang tiba-tiba
 def iterate():
     glViewport(50, 100, 300, 300) 
@@ -240,6 +316,7 @@ def showScreen():
     Kelinci1()
     Kelinci2()
     Kelinci3()
+    Kelinci4()
     glutSwapBuffers() #untuk membersihkan layar
 
 
@@ -275,3 +352,14 @@ def Render():
     glColor3ub(160, 89, 201)
     Rotate()
     glFlush()
+    
+def main():
+    glutInit(sys.argv)
+    glutInitDisplayMode(GLUT_SINGLE|GLUT_RGB)
+    glutInitWindowSize(900, 900)
+    glutInitWindowPosition(250, 0)
+    glutDisplayFunc(Render)
+    glutTimerFunc(20, Timer, 10)
+    glutMainLoop()
+
+main()
