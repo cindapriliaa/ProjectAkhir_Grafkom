@@ -11,8 +11,14 @@ import sys
 import math
 w,h= 500,500
 
+hijau = 0
+biru = 0
+merah = 0
 #fungsi objek badan
 def Kelinci1():
+    glPushMatrix()
+    glRotated(10,0,0,1)
+    glColor3f(hijau,biru,merah)
     glBegin(GL_POLYGON)
     glColor3ub(160, 89, 201)
 
@@ -44,10 +50,13 @@ def Kelinci1():
     glVertex2f(50, 73) #C_1
     glVertex2f(52, 88) #D_1
     glEnd()
+    glPopMatrix()
 
     #Telinga Kiri1
+    glPushMatrix()
+    glRotated(10,0,0,1)
+    glColor3f(hijau,biru,merah)
     glBegin(GL_POLYGON)
-    glColor3ub(160, 89, 201)
     glVertex2f(78, 119) #E_1
     glVertex2f(65, 151) #F_1
     glVertex2f(61, 163) #G_1
@@ -62,10 +71,13 @@ def Kelinci1():
     glVertex2f(117, 158) #P_1
     glVertex2f(119, 130) #Q_1
     glEnd()
+    glPopMatrix()
 
     #Telinga Kanan1
+    glPushMatrix()
+    glRotated(10,0,0,1)
+    glColor3f(hijau,biru,merah)
     glBegin(GL_POLYGON)
-    glColor3ub(160, 89, 201)
     glVertex2f(134, 130) #R_1
     glVertex2f(135, 167) #S_1
     glVertex2f(137, 177) #T_1
@@ -81,8 +93,10 @@ def Kelinci1():
     glVertex2f(177, 129) #F_2
     glVertex2f(172, 117) #G_2
     glEnd()
+    glPopMatrix()
 
 def Kelinci2():
+    glColor3f(hijau,biru,merah)
     glBegin(GL_POLYGON)
     glColor3ub(160, 89, 201)
 
@@ -115,6 +129,7 @@ def Kelinci2():
     glEnd()
 
     #Telinga Kiri2
+    glColor3f(hijau,biru,merah)
     glBegin(GL_POLYGON)
     glColor3ub(160, 89, 201)
     glVertex2f(375, 115) #I_3
@@ -133,6 +148,7 @@ def Kelinci2():
     glEnd()
 
     #Telinga Kanan2
+    glColor3f(hijau,biru,merah)
     glBegin(GL_POLYGON)
     glColor3ub(160, 89, 201)
     glVertex2f(432, 125) #V_3
@@ -298,11 +314,34 @@ def Kelinci4():
     glVertex2f(477, 428) #D_9
     glVertex2f(471, 416) #E_9
     glEnd()
-    
-    
+
+def iniHandleMouse(button, state, x, y):
+    global hijau, biru, merah
+    if button == GLUT_RIGHT_BUTTON and state == GLUT_DOWN:
+        boolGerakX=True
+        if biru< 1:
+             hijau = 0
+             biru = 1
+             merah = 0
+        elif merah < 1:
+             hijau = 0
+             biru = 0
+             merah = 1
+        print("Klik Kanan ditekan ", "(", x, ",", y, ")")
+    elif button == GLUT_LEFT_BUTTON and state == GLUT_DOWN:
+        if hijau < 1:
+            hijau = 1
+            biru = 0
+            merah = 0
+        else:
+            hijau = 0
+            biru = 0
+            merah = 0
+        print("Klik Kiri ditekan ", "(", x, ",", y, ")")
+
 #Fungsi Iterasi untuk looping keseluruhan program agar workspace tidak hilang tiba-tiba
 def iterate():
-    glViewport(50, 100, 300, 300) 
+    glViewport(25, 75, 350, 350) 
     glMatrixMode(GL_PROJECTION)
     glLoadIdentity()
     glOrtho(0.0, 600, 0.0, 600, 0.0, 1.0)
@@ -319,46 +358,15 @@ def showScreen():
     Kelinci4()
     glutSwapBuffers() #untuk membersihkan layar
 
-
-#Inisialisasi  
-glutInit() #inilisialisasi glut
-glutInitDisplayMode(GLUT_RGBA) #mengatur layar supaya memunculkan warna 
-glutInitWindowSize(900, 900) #untuk mengatur ukuran window
-glutInitWindowPosition(250, 0) #untuk mengaatur posisi layar atau window untuk workspace 
-wind = glutCreateWindow("BERUANGKTH") #untuk memberi nama pada window
-glutDisplayFunc(showScreen) #untuk menampilkan object yang telah dibuat pada layar, fungsi callback
-glutIdleFunc(showScreen) #membuat opengl terbuka dan menampilkan objek
-glutMainLoop() #untuk menilai segalanya dan untuk looping objek
-
-#Gerak Objek
-initRotAngle = 0.0
-def Rotate():
-    global initRotAngle
-    glPushMatrix()
-    glRotate(initRotAngle, 0, 0, 1)
-    Kelinci1()
-    Kelinci2()
-    initRotAngle = initRotAngle -1
-    glPopMatrix()
-    glFlush()
-
-def Timer():
-    glutPostRedisplay()
-    glutTimerFunc(20, Timer, 10)
-    glFlush()
-
-def Render():
-    glClear(GL_COLOR_BUFFER_BIT)
-    glColor3ub(160, 89, 201)
-    Rotate()
-    glFlush()
-    
 def main():
     glutInit(sys.argv)
     glutInitDisplayMode(GLUT_SINGLE|GLUT_RGB)
     glutInitWindowSize(900, 900)
     glutInitWindowPosition(250, 0)
-    glutDisplayFunc(Render)
-    glutTimerFunc(20, Timer, 10)
+    glutCreateWindow("BERUANGKTH") #untuk memberi nama pada window
+    glutDisplayFunc(showScreen) #untuk menampilkan object yang telah dibuat pada layar, fungsi callback
+    glutIdleFunc(showScreen) #membuat opengl terbuka dan menampilkan objek
+    glutMouseFunc(iniHandleMouse)
     glutMainLoop()
+
 main()
