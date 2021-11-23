@@ -361,5 +361,4 @@ def main():
     glutDisplayFunc(Render)
     glutTimerFunc(20, Timer, 10)
     glutMainLoop()
-
 main()
