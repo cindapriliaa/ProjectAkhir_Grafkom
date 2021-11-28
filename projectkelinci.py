@@ -1,4 +1,3 @@
-#Import Library
 import OpenGL.GL
 import OpenGL.GLUT
 import OpenGL.GLU
@@ -7,20 +6,21 @@ print("Imports successful!")
 from OpenGL.GL import *
 from OpenGL.GLUT import *
 from OpenGL.GLU import *
+from random import *
+# from level2 import *
 import sys
-import math
-w,h= 500,500
 
-hijau = 0
-biru = 0
-merah = 0
+merah = 160
+hijau = 89
+biru = 201
+angle_time = 0
 #fungsi objek badan
 def Kelinci1():
     glPushMatrix()
-    glRotated(10,0,0,1)
-    glColor3f(hijau,biru,merah)
+    glRotated(angle_time,0,0,1)
+    glScaled(3, 3, 0)
+    glColor3ub(merah, hijau, biru)
     glBegin(GL_POLYGON)
-    glColor3ub(160, 89, 201)
 
     #Wajah1
     glVertex2f(58, 100) #C
@@ -54,8 +54,9 @@ def Kelinci1():
 
     #Telinga Kiri1
     glPushMatrix()
-    glRotated(10,0,0,1)
-    glColor3f(hijau,biru,merah)
+    glRotated(angle_time,0,0,1)
+    glScaled(3, 3, 0)
+    glColor3ub(merah, hijau, biru)
     glBegin(GL_POLYGON)
     glVertex2f(78, 119) #E_1
     glVertex2f(65, 151) #F_1
@@ -75,8 +76,9 @@ def Kelinci1():
 
     #Telinga Kanan1
     glPushMatrix()
-    glRotated(10,0,0,1)
-    glColor3f(hijau,biru,merah)
+    glRotated(angle_time,0,0,1)
+    glScaled(3, 3, 0)
+    glColor3ub(merah, hijau, biru)
     glBegin(GL_POLYGON)
     glVertex2f(134, 130) #R_1
     glVertex2f(135, 167) #S_1
@@ -96,9 +98,11 @@ def Kelinci1():
     glPopMatrix()
 
 def Kelinci2():
-    glColor3f(hijau,biru,merah)
+    glPushMatrix()
+    glRotated(angle_time,0,0,1)
+    glScaled(3, 3, 0)
+    glColor3ub(merah, hijau, biru)
     glBegin(GL_POLYGON)
-    glColor3ub(160, 89, 201)
 
     #Wajah2
     glVertex2f(358, 100) #H_2
@@ -127,11 +131,14 @@ def Kelinci2():
     glVertex2f(349, 72) #G_3
     glVertex2f(351, 87) #H_3
     glEnd()
+    glPopMatrix()
 
     #Telinga Kiri2
-    glColor3f(hijau,biru,merah)
+    glPushMatrix()
+    glRotated(angle_time,0,0,1)
+    glScaled(3, 3, 0)
+    glColor3ub(merah, hijau, biru)
     glBegin(GL_POLYGON)
-    glColor3ub(160, 89, 201)
     glVertex2f(375, 115) #I_3
     glVertex2f(363, 152) #J_3
     glVertex2f(360, 163) #K_3
@@ -146,11 +153,14 @@ def Kelinci2():
     glVertex2f(416, 158) #T_3
     glVertex2f(415, 125) #U_3
     glEnd()
+    glPopMatrix()
 
     #Telinga Kanan2
-    glColor3f(hijau,biru,merah)
+    glPushMatrix()
+    glRotated(angle_time,0,0,1)
+    glScaled(3, 3, 0)
+    glColor3ub(merah, hijau, biru)
     glBegin(GL_POLYGON)
-    glColor3ub(160, 89, 201)
     glVertex2f(432, 125) #V_3
     glVertex2f(434, 163) #W_3
     glVertex2f(436, 175) #Z_3
@@ -166,10 +176,14 @@ def Kelinci2():
     glVertex2f(480, 135) #J_4
     glVertex2f(471, 116) #K_4
     glEnd()
+    glPopMatrix()
 
 def Kelinci3():
+    glPushMatrix()
+    glRotated(angle_time,0,0,1)
+    glScaled(3, 3, 0)
+    glColor3ub(merah, hijau, biru)
     glBegin(GL_POLYGON)
-    glColor3ub(160, 89, 201)
 
     #Wajah3
     glVertex2f(58, 400) #L_4
@@ -200,10 +214,14 @@ def Kelinci3():
     glVertex2f(50, 380) #M_5
     glVertex2f(53, 392) #N_5
     glEnd()
+    glPopMatrix()
 
     #Telinga Kiri3
+    glPushMatrix()
+    glRotated(angle_time,0,0,1)
+    glScaled(3, 3, 0)
+    glColor3ub(merah, hijau, biru)
     glBegin(GL_POLYGON)
-    glColor3ub(160, 89, 201)
     glVertex2f(75, 415) #O_5
     glVertex2f(62, 455) #P_5
     glVertex2f(60, 464) #Q_5
@@ -219,10 +237,14 @@ def Kelinci3():
     glVertex2f(117, 446) #C_6
     glVertex2f(115, 428) #D_6
     glEnd()
+    glPopMatrix()
 
     #Telinga Kanan3
+    glPushMatrix()
+    glRotated(angle_time,0,0,1)
+    glScaled(3, 3, 0)
+    glColor3ub(merah, hijau, biru)
     glBegin(GL_POLYGON)
-    glColor3ub(160, 89, 201)
     glVertex2f(131, 428) #E_6
     glVertex2f(133, 464) #F_6
     glVertex2f(137, 476) #G_6
@@ -238,10 +260,14 @@ def Kelinci3():
     glVertex2f(177, 430) #Q_6
     glVertex2f(171, 416) #R_6
     glEnd()
+    glPopMatrix()
 
 def Kelinci4():
+    glPushMatrix()
+    glRotated(angle_time,0,0,1)
+    glScaled(3, 3, 0)
+    glColor3ub(merah, hijau, biru)
     glBegin(GL_POLYGON)
-    glColor3ub(160, 89, 201)
 
     #Wajah4
     glVertex2f(358, 400) #S_6
@@ -275,10 +301,14 @@ def Kelinci4():
     glVertex2f(350, 380) #W_7
     glVertex2f(353, 392) #Z_7
     glEnd()
+    glPopMatrix()
 
     #Telinga Kiri4
+    glPushMatrix()
+    glRotated(angle_time,0,0,1)
+    glScaled(3, 3, 0)
+    glColor3ub(merah, hijau, biru)
     glBegin(GL_POLYGON)
-    glColor3ub(160, 89, 201)
     glVertex2f(378, 417) #A_8
     glVertex2f(363, 450) #B_8
     glVertex2f(361, 460) #C_8
@@ -295,10 +325,14 @@ def Kelinci4():
     glVertex2f(417, 445) #N_8
     glVertex2f(418, 428) #O_8
     glEnd()
+    glPopMatrix()
 
     #Telinga Kanan4
+    glPushMatrix()
+    glRotated(angle_time,0,0,1)
+    glScaled(3, 3, 0)
+    glColor3ub(merah, hijau, biru)
     glBegin(GL_POLYGON)
-    glColor3ub(160, 89, 201)
     glVertex2f(432, 428) #P_8
     glVertex2f(433, 461) #Q_8
     glVertex2f(437, 475) #R_8
@@ -314,37 +348,37 @@ def Kelinci4():
     glVertex2f(477, 428) #D_9
     glVertex2f(471, 416) #E_9
     glEnd()
+    glPopMatrix()
 
 def iniHandleMouse(button, state, x, y):
-    global hijau, biru, merah
+    global merah, hijau, biru
     if button == GLUT_RIGHT_BUTTON and state == GLUT_DOWN:
-        boolGerakX=True
-        if biru< 1:
-             hijau = 0
-             biru = 1
-             merah = 0
-        elif merah < 1:
-             hijau = 0
-             biru = 0
-             merah = 1
+        if merah == 160 and hijau == 89 and biru == 201 :
+            merah = randint (0, 255)
+            hijau = randint (0, 255)
+            biru = randint (0, 255)
         print("Klik Kanan ditekan ", "(", x, ",", y, ")")
     elif button == GLUT_LEFT_BUTTON and state == GLUT_DOWN:
-        if hijau < 1:
-            hijau = 1
-            biru = 0
-            merah = 0
-        else:
-            hijau = 0
-            biru = 0
-            merah = 0
+        if merah == 160 and hijau == 89 and biru == 201 :
+            merah = 252
+            hijau = 3
+            biru = 3
         print("Klik Kiri ditekan ", "(", x, ",", y, ")")
+
+def timer(value):
+    global angle_time
+    if angle_time == 0:
+        angle_time += 2
+    else :
+        angle_time -= 2
+    glutTimerFunc(100, timer, 0)
 
 #Fungsi Iterasi untuk looping keseluruhan program agar workspace tidak hilang tiba-tiba
 def iterate():
     glViewport(25, 75, 350, 350) 
     glMatrixMode(GL_PROJECTION)
     glLoadIdentity()
-    glOrtho(0.0, 600, 0.0, 600, 0.0, 1.0)
+    glOrtho(0.0, 1500, 0.0, 1500, 0.0, 1.0)
     glMatrixMode (GL_MODELVIEW)
     glLoadIdentity()
 
@@ -364,6 +398,7 @@ def main():
     glutInitWindowSize(900, 900)
     glutInitWindowPosition(250, 0)
     glutCreateWindow("BERUANGKTH") #untuk memberi nama pada window
+    timer(0)
     glutDisplayFunc(showScreen) #untuk menampilkan object yang telah dibuat pada layar, fungsi callback
     glutIdleFunc(showScreen) #membuat opengl terbuka dan menampilkan objek
     glutMouseFunc(iniHandleMouse)
