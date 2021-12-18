@@ -1,4 +1,5 @@
 #Import Library
+from random import triangular
 import OpenGL.GL
 import OpenGL.GLUT
 import OpenGL.GLU
@@ -7,7 +8,6 @@ print("Imports successful!")
 from OpenGL.GL import *
 from OpenGL.GLUT import *
 from OpenGL.GLU import *
-from random import *
 import OpenGL.GLUT as glut
 import sys
 
@@ -814,24 +814,23 @@ def iniHandleMouse(button, state, x, y):
     global merah10, hijau10, biru10, game_over
     if button == GLUT_RIGHT_BUTTON and state == GLUT_DOWN:
         if merah1 == 160 and hijau1 == 89 and biru1 == 201 and 42<x<95 and 325<y<410 :
-            merah1 = randint (0, 255)
-            hijau1 = randint (0, 255)
-            biru1 = randint (0, 255)
-            game_over = True
+            merah1 = 66
+            hijau1 = 135
+            biru1 = 245
         print("Klik Kanan ditekan ", "(", x, ",", y, ")")
     elif button == GLUT_LEFT_BUTTON and state == GLUT_DOWN:
-        if merah1 == 160 and hijau1 == 89 and biru1 == 201 and 42<x<95 and 325<y<410 :
+        if (merah1 == 66 and hijau1 == 135 and biru1 == 245) or (merah1 == 160 and hijau1 == 89 and biru1 == 201) and 42<x<95 and 325<y<410 :
             merah1 = 252
             hijau1 = 3
             biru1 = 3
             game_over = False
-        print("Klik Kiri ditekan ", "(", x, ",", y, ")")
+        print("Klik Kanan ditekan ", "(", x, ",", y, ")")
 
     if button == GLUT_RIGHT_BUTTON and state == GLUT_DOWN:
         if merah2 == 252 and hijau2 == 3 and biru2 == 3 and 149<x<202 and 330<y<414 :
-            merah2 = randint (0, 255)
-            hijau2 = randint (0, 255)
-            biru2 = randint (0, 255)
+            merah2 = 66
+            hijau2 = 135
+            biru2 = 245
             game_over = True
         print("Klik Kanan ditekan ", "(", x, ",", y, ")")
     elif button == GLUT_LEFT_BUTTON and state == GLUT_DOWN:
@@ -839,14 +838,14 @@ def iniHandleMouse(button, state, x, y):
             merah2 = 160
             hijau2 = 89
             biru2 = 201
-            game_over = True
+            game_over = False
         print("Klik Kiri ditekan ", "(", x, ",", y, ")")
 
     if button == GLUT_RIGHT_BUTTON and state == GLUT_DOWN:
         if merah3 == 160 and hijau3 == 89 and biru3 == 201 and 41<x<97 and 178<y<263 :
-            merah3 = randint (0, 255)
-            hijau3 = randint (0, 255)
-            biru3 = randint (0, 255)
+            merah3 = 66
+            hijau3 = 135
+            biru3 = 245
             game_over = True
         print("Klik Kanan ditekan ", "(", x, ",", y, ")")
     elif button == GLUT_LEFT_BUTTON and state == GLUT_DOWN:
@@ -859,9 +858,9 @@ def iniHandleMouse(button, state, x, y):
 
     if button == GLUT_RIGHT_BUTTON and state == GLUT_DOWN:
         if merah4 == 252 and hijau4 == 3 and biru4 == 3 and 151<x<203 and 170<y<256 :
-            merah4 = randint (0, 255)
-            hijau4 = randint (0, 255)
-            biru4 = randint (0, 255)
+            merah4 = 66
+            hijau4 = 135
+            biru4 = 245
             game_over = True
         print("Klik Kanan ditekan ", "(", x, ",", y, ")")
     elif button == GLUT_LEFT_BUTTON and state == GLUT_DOWN:
@@ -874,24 +873,23 @@ def iniHandleMouse(button, state, x, y):
 
     if button == GLUT_RIGHT_BUTTON and state == GLUT_DOWN:
         if merah5 == 160 and hijau5 == 89 and biru5 == 201 and 255<x<308 and 181<y<263 :
-            merah5 = randint (0, 255)
-            hijau5 = randint (0, 255)
-            biru5 = randint (0, 255)
-            game_over = True
+            merah5 = 66
+            hijau5 = 135
+            biru5 = 245
         print("Klik Kanan ditekan ", "(", x, ",", y, ")")
     elif button == GLUT_LEFT_BUTTON and state == GLUT_DOWN:
-        if merah5 == 160 and hijau5 == 89 and biru5 == 201 and 255<x<308 and 181<y<263 :
+        if (merah5 == 66 and hijau5 == 135 and biru5 == 245) or (merah5 == 160 and hijau5 == 89 and biru5 == 201) and 255<x<308 and 181<y<263 :
             merah5 = 252
             hijau5 = 3
             biru5 = 3
             game_over = False
-        print("Klik Kiri ditekan ", "(", x, ",", y, ")")
+        print("Klik Kanan ditekan ", "(", x, ",", y, ")")
 
     if button == GLUT_RIGHT_BUTTON and state == GLUT_DOWN:
         if merah6 == 160 and hijau6 == 89 and biru6 == 201 and 256<x<310 and 329<y<413 :
-            merah6 = randint (0, 255)
-            hijau6 = randint (0, 255)
-            biru6 = randint (0, 255)
+            merah6 = 66
+            hijau6 = 135
+            biru6 = 245
             game_over = True
         print("Klik Kanan ditekan ", "(", x, ",", y, ")")
     elif button == GLUT_LEFT_BUTTON and state == GLUT_DOWN:
@@ -904,9 +902,9 @@ def iniHandleMouse(button, state, x, y):
 
     if button == GLUT_RIGHT_BUTTON and state == GLUT_DOWN:
         if merah7 == 252 and hijau7 == 3 and biru7 == 3 and 362<x<418 and 178<y<262 :
-            merah7 = randint (0, 255)
-            hijau7 = randint (0, 255)
-            biru7 = randint (0, 255)
+            merah7 = 66
+            hijau7 = 135
+            biru7 = 245
             game_over = True
         print("Klik Kanan ditekan ", "(", x, ",", y, ")")
     elif button == GLUT_LEFT_BUTTON and state == GLUT_DOWN:
@@ -919,9 +917,9 @@ def iniHandleMouse(button, state, x, y):
 
     if button == GLUT_RIGHT_BUTTON and state == GLUT_DOWN:
         if merah8 == 160 and hijau8 == 89 and biru8 == 201 and 365<x<416 and 329<y<414 :
-            merah8 = randint (0, 255)
-            hijau8 = randint (0, 255)
-            biru8 = randint (0, 255)
+            merah8 = 66
+            hijau8 = 135
+            biru8 = 245
             game_over = True
         print("Klik Kanan ditekan ", "(", x, ",", y, ")")
     elif button == GLUT_LEFT_BUTTON and state == GLUT_DOWN:
@@ -934,9 +932,9 @@ def iniHandleMouse(button, state, x, y):
 
     if button == GLUT_RIGHT_BUTTON and state == GLUT_DOWN:
         if merah9 == 160 and hijau9 == 89 and biru9 == 201 and 472<x<524 and 150<y<236 :
-            merah9 = randint (0, 255)
-            hijau9 = randint (0, 255)
-            biru9 = randint (0, 255)
+            merah9 = 66
+            hijau9 = 135
+            biru9 = 245
             game_over = True
         print("Klik Kanan ditekan ", "(", x, ",", y, ")")
     elif button == GLUT_LEFT_BUTTON and state == GLUT_DOWN:
@@ -949,20 +947,19 @@ def iniHandleMouse(button, state, x, y):
 
     if button == GLUT_RIGHT_BUTTON and state == GLUT_DOWN:
         if merah10 == 160 and hijau10 == 89 and biru10 == 201 and 471<x<522 and 330<y<414 :
-            merah10 = randint (0, 255)
-            hijau10 = randint (0, 255)
-            biru10 = randint (0, 255)
-            game_over = True
+            merah10 = 66
+            hijau10 = 135
+            biru10 = 245
         print("Klik Kanan ditekan ", "(", x, ",", y, ")")
     elif button == GLUT_LEFT_BUTTON and state == GLUT_DOWN:
-        if merah10 == 160 and hijau10 == 89 and biru10 == 201 and 471<x<522 and 330<y<414 :
+        if (merah10 == 66 and hijau10 == 135 and biru10 == 245) or (merah10 == 160 and hijau10 == 89 and biru10 == 201) and 471<x<522 and 330<y<414 :
             merah10 = 252
             hijau10 = 3
             biru10 = 3
             game_over = False
-        print("Klik Kiri ditekan ", "(", x, ",", y, ")")
+        print("Klik Kanan ditekan ", "(", x, ",", y, ")")
 
-            
+#Fungsi Penggerak Kelinci       
 def timer1(value):
     global angle_time1
     if angle_time1 == 0:
@@ -1083,8 +1080,8 @@ def showScreen():
     glLoadIdentity() #untuk mereset semua posisi grafik stsu bentuk
     iterate() #fungsi looping
     if game_over == True:
-        bg_text(360, 100)
-        drawText("GAME OVER",700,300,50,200,50)
+        bg_text(900, 600)
+        drawText("GAME OVER",1245,795,50,200,50)
     else:
         Kelinci1()
         Kelinci2()
